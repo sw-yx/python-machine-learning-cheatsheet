@@ -9,7 +9,8 @@ import warnings
 warnings.simplefilter("ignore")
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
-%matplotlib inline
+# %matplotlib inline
+np.random.seed(55)
 ```
 
 ## EDA
@@ -219,3 +220,8 @@ classifier.fit(X_train,y_train)
 print_score(classifier,X_train,y_train,X_test,y_test,train=True)
 print_score(classifier,X_train,y_train,X_test,y_test,train=False)
 ```
+
+
+## References
+
+- https://www.kaggle.com/raghuchaudhary/mushroom-classification/comments
