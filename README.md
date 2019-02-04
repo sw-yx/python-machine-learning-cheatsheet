@@ -221,7 +221,30 @@ print_score(classifier,X_train,y_train,X_test,y_test,train=True)
 print_score(classifier,X_train,y_train,X_test,y_test,train=False)
 ```
 
+## Nested Cross Eval
+
+```py
+param_grid = [{'C': np.logspace(-3, 3, 10)}]
+
+grid_search = GridSearchCV(
+    estimator=LogisticRegression(),
+    param_grid=param_grid,
+    cv=StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=42),
+    scoring='f1',
+    n_jobs=-1
+)
+
+scores = cross_val_score(
+    estimator=grid_search,
+    X=X_std,
+    y=y.enc,
+    cv=StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=0),
+    scoring='f1',
+    n_jobs=-1
+)
+```
 
 ## References
 
 - https://www.kaggle.com/raghuchaudhary/mushroom-classification/comments
+- http://inmachineswetrust.com/posts/mushroom-classification/
