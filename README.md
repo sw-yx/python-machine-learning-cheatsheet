@@ -248,9 +248,10 @@ scores = cross_val_score(
 
 - https://www.kaggle.com/baghern/a-deep-dive-into-sklearn-pipelines
 - https://medium.com/bigdatarepublic/integrating-pandas-and-scikit-learn-with-pipelines-f70eb6183696
-- http://michelleful.github.io/code-blog/2015/06/20/pipelines/ (approachable intro)
+- http://michelleful.github.io/code-blog/2015/06/20/pipelines/ (approachable intro) related to https://www.youtube.com/watch?v=0UWXCAYn8rk (simple tutorial)
 - http://zacstewart.com/2014/08/05/pipelines-of-featureunions-of-pipelines.html making custom transformers
-- https://www.youtube.com/watch?v=0UWXCAYn8rk
+- https://iaml.it/blog/optimizing-sklearn-pipelines what it says
+- https://www.kdnuggets.com/2017/12/managing-machine-learning-workflows-scikit-learn-pipelines-part-1.html (non gridsearch comparison of pipelines)
 
 ## SKLearn Transformers
 
