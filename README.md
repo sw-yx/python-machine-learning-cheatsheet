@@ -252,6 +252,54 @@ scores = cross_val_score(
 - http://zacstewart.com/2014/08/05/pipelines-of-featureunions-of-pipelines.html making custom transformers
 - https://www.youtube.com/watch?v=0UWXCAYn8rk
 
+## SKLearn Transformers
+
+```py
+from sklearn.base import TransformerMixin, BaseEstimator
+class MyTransformer(TransformerMixin, BaseEstimator):
+    """Recommended signature for a custom transformer.
+
+    Inheriting from TransformerMixin gives you fit_transform
+
+    Inheriting from BaseEstimator gives you grid-searchable params.
+    """
+    def __init__(self):
+        """If you need to parameterize your transformer,
+        set the args here.
+
+        Inheriting from BaseEstimator introduces the constraint
+        that the args all be named keyword args, no positional 
+        args or **kwargs.
+        """
+        pass
+    def fit(self, X, y):
+        """Recommended signature for custom transformer's
+        fit method.
+
+        Set state here with whatever information
+        is needed to transform later.
+
+        In some cases fit may do nothing. For example transforming 
+        degrees Fahrenheit to Kelvin, requires no state.
+
+        You can use y here, but won't have access to it in transform.
+        """
+        #You have to return self, so we can chain!
+        return self
+    def transform(self, X):
+        """Recommended signature for custom transformer's
+        transform method.
+
+        Transform some X data, optionally using state set in fit. This X
+        may be the same X passed to fit, but it may also be new data,
+        as in the case of a CV dataset. Both are treated the same.
+        """
+        #Do transforms.
+        #transformed = foo(X)
+        return transformed
+```
+from https://github.com/zipfian/pipelines_and_featureunions/blob/master/pipelines_and_featureunions.ipynb
+
 ## GridSearchCV
 
 - https://gist.github.com/amberjrivera/8c5c145516f5a2e894681e16a8095b5c
