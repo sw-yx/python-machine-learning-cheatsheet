@@ -306,6 +306,26 @@ class MyTransformer(TransformerMixin, BaseEstimator):
 ```
 from https://github.com/zipfian/pipelines_and_featureunions/blob/master/pipelines_and_featureunions.ipynb
 
+`FunctionTransformer`: simple mapper transformer
+
+```py
+from sklearn.preprocessing import FunctionTransformer
+from sklearn.pipeline import FeatureUnion
+
+X = np.random.random((100,1))
+
+fu = FeatureUnion([('sqrt',FunctionTransformer(np.sqrt)),
+                  ('identity',FunctionTransformer()), ## None works!
+                  ('square', FunctionTransformer(lambda x: x**2))])
+print(X[:5])
+print(fu.fit_transform(X)[:5])
+```
+
+- 	sklearn.preprocessing.OneHotEncoder
+- 	sklearn.preprocessing.Imputer
+- 	sklearn.preprocessing.CountVectorizer
+
+
 ## GridSearchCV
 
 - https://gist.github.com/amberjrivera/8c5c145516f5a2e894681e16a8095b5c
