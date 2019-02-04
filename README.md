@@ -244,6 +244,28 @@ scores = cross_val_score(
 )
 ```
 
+## Pipelines
+
+- https://www.kaggle.com/baghern/a-deep-dive-into-sklearn-pipelines
+- https://medium.com/bigdatarepublic/integrating-pandas-and-scikit-learn-with-pipelines-f70eb6183696
+- http://michelleful.github.io/code-blog/2015/06/20/pipelines/ (approachable intro)
+- http://zacstewart.com/2014/08/05/pipelines-of-featureunions-of-pipelines.html making custom transformers
+- https://www.youtube.com/watch?v=0UWXCAYn8rk
+
+## GridSearchCV
+
+- https://gist.github.com/amberjrivera/8c5c145516f5a2e894681e16a8095b5c
+
+## Naive Bayes
+
+http://zacstewart.com/2014/01/10/building-a-language-identifier.html
+
+## Usecase breakdowns
+
+- spam http://zacstewart.com/2015/04/28/document-classification-with-scikit-learn.html
+
+
+
 ## References
 
 - https://www.kaggle.com/raghuchaudhary/mushroom-classification/comments
