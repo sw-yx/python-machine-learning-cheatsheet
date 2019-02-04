@@ -285,6 +285,10 @@ class MyTransformer(TransformerMixin, BaseEstimator):
         You can use y here, but won't have access to it in transform.
         """
         #You have to return self, so we can chain!
+        
+        # do stuff to self.xyz or pass
+        # e.g. self.mean = np.mean(X, axis=0)
+        # e.g. self.std = np.std(X, axis=0)
         return self
     def transform(self, X):
         """Recommended signature for custom transformer's
@@ -295,8 +299,10 @@ class MyTransformer(TransformerMixin, BaseEstimator):
         as in the case of a CV dataset. Both are treated the same.
         """
         #Do transforms.
-        #transformed = foo(X)
-        return transformed
+        #T = X.copy()
+        #T -= self.mean
+        #T /= self.scale
+        return T
 ```
 from https://github.com/zipfian/pipelines_and_featureunions/blob/master/pipelines_and_featureunions.ipynb
 
